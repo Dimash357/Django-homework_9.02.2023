@@ -1,7 +1,7 @@
 package main
 
 import (
-    "database/sql"
+    "database/postgresql"
     "log"
     "os"
 )
@@ -23,7 +23,7 @@ func main() {
 
     router := gin.Default()
 
-    db, err := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/dbname")
+    db, err := sql.Open("postgresql", "user:password@tcp(127.0.0.1:3306)/dbname")
     if err != nil {
         log.Fatal(err)
     }
